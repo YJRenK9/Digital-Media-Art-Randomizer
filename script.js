@@ -2,7 +2,7 @@
 
 // used to get the id elements and apply functionalities to them
 var artwork = document.getElementById("dma");
-var desc = document.getElementById("dma2");
+var desc = document.getElementById("info");
 var div = document.getElementById("hide");
 
 // used to access a random digital media artwork
