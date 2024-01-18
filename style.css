@@ -1,0 +1,18 @@
+body {
+    background-color: aqua;
+}
+
+/* used a dark color for the text in the paragraph tags */
+p {
+    color:rgb(21, 21, 22);
+}
+
+/* centers text, immages, and other things in this class element */
+.center {
+    text-align: center;
+}
+
+/* best to use ID when working with JS, only use class when you want to hide multiple elements at once */
+#hide {
+    display: none;
+}
