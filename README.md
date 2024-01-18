@@ -8,7 +8,7 @@ For this project, you'll be coding a digital media art randomizer.  When you cli
 
 Use **JavaScript** to display text and manipulate elements on webpages.  Use the DOM to have JavaScript communicate with HTML/CSS to change the image and text with a click of a button.    
   1. Create a gallery of digital media artworks
-  2. Provide title, description, and source for each digital media artwork
+  2. Provide a title, description, and source for each digital media artwork
   3. Implement code for randomizer
 
 ## Prerequisites
@@ -25,7 +25,7 @@ To complete this project, students should have the following:
 
 ## Your Challenge
 
-### Part I: Setup
+### Part 1: Setup
 
 Make sure to have the following files:
   + index.html
@@ -38,42 +38,32 @@ Create the following files:
 
 You can use the images I provided, use your own, or use existing ones on the Internet.
 
-If you choose not to use the ones provided, then you can use digital fan art, image edits, 3D models, game sprites, or anything relating to digital art.  The possibilities are endless.
+If you choose not to use the ones provided, then you can use digital fan art, image edits, 3D models, game sprites, Minecraft builds, or anything relating to digital art.  The possibilities are endless.
 
 If you choose to use your own digital media artwork, then briefly state how you made it instead of providing the source link.
 
-### Part 3A: JavaScript File (script.js) 
+### Part 2A: Creating Variables in JavaScript File (script.js) 
 
-  1. link variables.js to index.html at the end of the ```<body>``` tag
-  2. create the following string variables
-      + dataType, stores "bool "
-      + variableName1, stores "activateGlitchArt"
-      + variableName2, stores "keepInventory"
-  3. create the following boolean variables
-      + boolValue1, stores false
-      + boolValue2, stores true
-  4. apply the following code snippet (mentors, please make sure the students have this code snippet)
-  ```js
-  // gets the element id called booleans1
-  var paragraph1 = document.getElementById("booleans1");
+  1. link script.js to index.html at the end of the ```<body>``` tag
+  2. create two variables that store document.getElementById()
+      + first variable is called ```artwork``` and stores an id called ```dma```
+      + second variable is called ```desc``` and stores an id called ```info```
+      + don't forget the quotation marks around the id name 
+  3. create an int variable ```randomInt``` that stores ```0```
+  4. create an array called ```artworks``` that stores 6 string values
+      + each string should start with ```assets/``` and end with ```file name``` and ```file extension```
+      + e.g. ```"assets/panda-glitch-art.webp"``` 
+     
+### Part 2B: Creating an Array of Objects
 
-  // gets the element id called booleans2
-  var paragraph2 = document.getElementById("booleans2");
-  ```
-  5. Use ```.innerHTML``` and string concactenation to display text to the webpage
-  
-  Here's the first part of the answer of step 5:
-  ```js
-  // adds multiple variables in a row to form 2 defined boolean variables
-  paragraph1.innerHTML = dataType + variableName1 + " = " + boolValue1;
-  paragraph1.innerHTML += "\t\t\t\t" + dataType + variableName1 + " = " + boolValue2;
-  ```
-  Please incllude this code snippet and do the same for the variable paragraph2.
-
-### Part 3B: 2nd JavaScript File (script.js)
-
-  1. link script.js to overworld_layers.html at the end of the ```<body>``` tag
-  2. add the following code snippet:
+  1. create an array of objects called ```artworkDescription```
+  2. store 6 objects in the array
+      + each object should contain ```title```, ```description```, and ```source```
+        + title should be the name of the digital artwork
+        + provide a brief description of the digital artwork
+        + provide software tools used if you made the digital artwork
+        + provide the URL link to the digital artwork if you didn't make it   
+  3. add the following code snippet:
   ```js
   // used to change the image
   var layer = document.getElementById("imageLayer");
@@ -132,6 +122,8 @@ If you choose to use your own digital media artwork, then briefly state how you 
         + location_name.innerHTML would be "Layer: Void"
         
 layer.src represents the image source, which is used to change the image.  location_name.innerHTML is used to change the text on the webpage.  Remember to use the proper file paths for your images.  
+
+### Part 3B: 2nd JavaScript File (script.js)
 
 ## Stretch Goals
 
