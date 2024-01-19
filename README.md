@@ -36,9 +36,9 @@ Create the following files:
   + folder called "assets"
     + 6 images (or gifs) related to digital art   
 
-You can use the images I provided, use your own, or use existing ones on the Internet.
+You can use the images I provided, use your own, or use existing ones on the Internet.  No need to change ```index.html``` if you use the provided images.
 
-If you choose not to use the ones provided, then you can use digital fan art, image edits, 3D models, game sprites, Minecraft builds, or anything relating to digital art.  The possibilities are endless.
+If you choose not to use the ones provided, then you can use digital fan art, image edits, 3D models, game sprites, Minecraft builds, or anything relating to digital art.  The possibilities are endless.  Oh and make sure to change the image source in ```index.html```, otherwise, you'll see the panda glitch art upon start (unless you don't mind).
 
 If you choose to use your own digital media artwork, then briefly state how you made it instead of providing the source link.
 
@@ -63,73 +63,90 @@ If you choose to use your own digital media artwork, then briefly state how you 
         + provide a brief description of the digital artwork
         + provide software tools used if you made the digital artwork
         + provide the URL link to the digital artwork if you didn't make it   
-  3. add the following code snippet:
+
+  Your array of objects should look something like this...
+
+  ![AoO_Example](assets/ArrayofObjects.png) 
+  
+  **Make sure the titles, descriptions, and sources are appropriate to the digital artworks you've chosen.** 
+  
+  ### Part 3A: Template Literals (Multi-line Strings and String Interpolation)
+
+  Before we implement the object properties into innerHTML, let me introduce you to template literals.  Template literals will come in handy because you get to display multiple lines of text in a paragraph element.  Also, it's more convenient than string concatenation as it usually requires less space.
+
+  To make a multi-line string, type in the **`** key located between the ```esc``` key and the ```tab``` key.  You can type in whatever you want, but to make it multi-lined, you must press ```enter``` when you want to type more stuff on the next line.
+
+  Here's an example of a multi-line string:
   ```js
-  // used to change the image
-  var layer = document.getElementById("imageLayer");
+  var multiLine = `Information and Computer Sciences
+                   Creative Computational Media
+                   School of Cinematic Arts`;
 
-  // used to decrease the displayed y_position value
-  var descendVeritcally = document.getElementById("descend");
-  // used to increase the displayed y_position value
-  var ascendVeritcally = document.getElementById("ascend");
-
-  // used to display the y_postion on the webpage
-  var verticalPosition = document.getElementById("getVerticalPosition");
-
-  // used to get the name of the layer depending on the y_position
-  var location_name = document.getElementById("layerName");
+  console.log(multiLine);
+  // Information and Computer Sciences
+  // Creative Computational Media
+  // School of Cinematic Arts
   ```
-  
-  (Mentors, have students copy and paste the above code snippet to their script.js file)
-  
-  3. create a variable called y_position that stores an int value of 5
-  4. add the following code snippets
+  This is equivalent to using three print statements to print multiple strings but uses fewer lines of code. 
+
+  To perform string interpolation, you would put the variable inside of curly brackets right after the dollar sign.  It must be inside of the backticks, otherwise it won't work.  Here's how to code string interpolation:
   ```js
-  // have the left arrow "button" manipulate the webpage when clicked on
-  descendVertically.addEventListener("click", function() {
-    // continue coding steps 5 through 8 in here
-  });
-  
-  // have the right arrow "button" manipulate the webpage when clicked on
-  ascendVertically.addEventListener("click", function() {
-    // continue coding steps 5 through 8 in here
-  });
-  ```
-  
- (Mentors, have students copy and paste the above code snippet to their script.js file)
-  
-  5. decrement the y_position by 1 inside the unnamed function of descendVertically
-  6. increment the y_position by 1 inside the unnamed function of ascendVertically
-  7. Update the y_position on the webpage by using ```.innerHTML``` to verticalPosition.  
-  8. Create an if/else statement.  The if/else statement should inculde: 
-      + if y_position is greater than or equal to 20
-        + layer.src would be Sky.jpg
-        + location_name.innerHTML would be "Layer: Above the Clouds"
-      + else if y_position is greater than or equal to 10
-        + layer.src would be mountains.webp
-        + location_name.innerHTML would be "Layer: Mountains"
-      + else if y_position is greater than or equal to 5
-        + layer.src would be plains.jpg
-        + location_name.innerHTML would be "Layer: Plains"
-      + else if y_position is greater than or equal to 2
-        + layer.src would be Cave.webp
-        + location_name.innerHTML would be "Layer: Caves"
-      + else if y_position is greater than or equal to 0
-        + layer.src would be Lava_Cave.webp
-        + location_name.innerHTML would be "Layer: Lava Caves"
-      + else
-        + layer.src would be The_Void.webp
-        + location_name.innerHTML would be "Layer: Void"
-        
-layer.src represents the image source, which is used to change the image.  location_name.innerHTML is used to change the text on the webpage.  Remember to use the proper file paths for your images.  
+  var interpolateIO = `1 means ${true} or ON, 0 means ${false} or OFF`;
+  var interpolateCattle = `There are ${4} kinds of farm animals in Minecraft.`;
 
-### Part 3B: 2nd JavaScript File (script.js)
+  let virtues = ["Power", "Courage", "Wisdom"];
+
+  var interpolateTri = `The three virtues:
+                         - ${virtues[0]}
+                         - ${virtues[1]}
+                         - ${virtues[2]}`;
+
+  console.log(interpolateIO);
+  // 1 means true or ON, 0 means false or OFF
+
+  console.log(interpolateCattle);
+  // There are 4 kinds of farm animals in Minecraft.
+
+  console.log(interpolateTri);
+  // The three virtues:
+  //  - Power
+  //  - Courage
+  //  - Wisdom
+  ```
+  Here's the link if you'd like to learn more about template literals:
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+  Now that you know how to do multiline strings and string interpolation, let's apply that to innerHTML.  The paragraph tag with an id called "info" currently displays "Hello World".  Let's change "Hello World" to the title, description, and source of the digital artwork.  We would need to use a DOM variable we created earlier called ```desc```.  The innerHTML property should let us modify what's in the paragraph element.
+
+  1. type in ```desc.innerHTML``` and assign it with a template literal
+
+  This is the part where we type in HTML tags to improve the layout of the paragraph.  We want to make the information more readable by increasing the line spacing with ```<br>``` and bolding the property names with ```<b>```.  We also want to use string interpolation to get the properties of each object in the array.  
+
+  2. type in 3 lines in the template string
+      + The first line should have ```Title:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 5].title}<br><br>```
+      + The second line should have ```Description:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 5].description}<br><br>```
+      + The third line should have ```Source:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 5].source}<br><br>```
+    
+     **Make sure the index you used for your array of objects is the SAME, otherwise, you'll display information from different digital artworks.**
+
+### Part 3B: Create Randomizer Function
+
+You're almost done with this project.  Things look visually complete, but the functionality to randomize digital media artworks is missing.  I already put the function name for the button's onclick event in the HTML file.  So all that's left is to create a function for it.
+
+   1. create a function called ```changeArtwork```
+   2. inside of the function, implement the following code snippet
+   ```js
+   // need floor function to "convert" float to int
+   // multiplied by artworks.length to make the range go from 0 to artworks.length - 1
+   randomInt = Math.floor(Math.random() * artworks.length);
+   ```
+   3. wip
 
 ## Stretch Goals
 
 ### Add more to overworld_layers.html
 
-Add more else if's to your if/else statement and use images such as DeepDark.webp, Deepslate_Cave.webp, Forest.webp, Jungle.webp, and Space.png 
+Add more else ifs to your if/else statement and use images such as DeepDark.webp, Deepslate_Cave.webp, Forest.webp, Jungle.webp, and Space.png 
 
 ### Add CSS to your website
 
