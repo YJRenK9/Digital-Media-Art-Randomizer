@@ -116,7 +116,7 @@ If you choose to use your own digital media artwork, then briefly state how you 
   Here's the link if you'd like to learn more about template literals:
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
-  Now that you know how to do multiline strings and string interpolation, let's apply that to innerHTML.  The paragraph tag with an id called "info" currently displays "Hello World".  Let's change "Hello World" to the title, description, and source of the digital artwork.  We would need to use a DOM variable we created earlier called ```desc```.  The innerHTML property should let us modify what's in the paragraph element.
+  Now that you know how to do multiline strings and string interpolation, let's apply that to innerHTML.  The paragraph tag with an id called "info" currently displays "Hello World".  Let's change "Hello World" to the digital artwork's title, description, and source.  We would need to use a DOM variable we created earlier called ```desc```.  The innerHTML property should let us modify what's in the paragraph element.
 
   1. type in ```desc.innerHTML``` and assign it with a template literal
 
@@ -140,93 +140,42 @@ You're almost done with this project.  Things look visually complete, but the fu
    // multiplied by artworks.length to make the range go from 0 to artworks.length - 1
    randomInt = Math.floor(Math.random() * artworks.length);
    ```
-   3. wip
+   Link to learn Math.random(): https://www.w3schools.com/JS/js_random.asp
+   
+   3. assign the artworks array with randomInt as the index to the image source of ```artwork``` 
+   4. Repeat step 2 from part 3A except change the array of objects' indexes to randomInt
+
+   After step 4, your digital media art randomizer should work.  If it doesn't work, then you try to see if you did all the steps correctly, or you can ask the mentors for help.
+
+   Congratulations!
+
+   You just learned how to make a randomizer for digital media artworks.  Now people can see digital artworks either you or someone else made.  They can see other types of digital media art out there, including ones you don't see around in school as much.  If you plan to go to UH Manoa and you're interested in both coding and digital art, then consider checking out the creative computational media certificate.
 
 ## Stretch Goals
 
-### Add more to overworld_layers.html
+So you decided to continue working more on this project to add it to your project portfolio? Luckily, I also provided the HTML and CSS code for the stretch goal.  I'll give you a few more ideas of what to add, but first, let's have the user hide/unhide the net art demo with a click of a button.
 
-Add more else ifs to your if/else statement and use images such as DeepDark.webp, Deepslate_Cave.webp, Forest.webp, Jungle.webp, and Space.png 
+### Bonus Part 1: Creating another DOM variable
 
-### Add CSS to your website
+   1. Create a variable called ```div``` that stores document.getElementById()
+      + The id should be "hide"
+   2. Call ```style.display``` on ```div``` and assign it with "none"
+      + This is used, so the user doesn't have to click on the second button twice upon start
+   
+### Bonus Part 2: Creating a function that hides/unhides the div
 
-| CSS  | Description |
-| ------------- | ------------- |
-| @import url | imports other stylesheets, including custom fonts, into an existing CSS file |
+   1. Create a function called ```showDiv```
+   2. Create an if/else statement that checks if the div's style display is none (hint: use ===)
+   3. In the if block, set the div's style display to "block"
+   4. In the else block, set the div's style display to "none"
 
-We'll use `@import url("#");` to import a custom font into this project.  The "#" represents a website link to a custom font.  Like any programming language, `@import url("#");` must be used at the very top of your CSS file.
+   Alternatively, you can skip step 2 of bonus part 1, and then inside the if condition, add ```div.style.display === ''``` after the OR logical operator.
 
-Side note: URL stands for uniform resource locator
+   After step 4, you should be able to hide/unhide the net art demo.  You can watch the videos to see what net art is like.  Feel free to explore more examples of creating websites as an art medium by clicking on the red image below.
 
-  1. create a CSS file called style.css  
-  2. link your CSS file to both of your HTML files by doing the following in the ```<head>``` tag:
-  ```html
-  <!-- enables the CSS file to format and decorate the webpage -->
-  <link rel="stylesheet" href="style.css">
-  ```
-  3. import the minecrafttia font by typing in the following:
-  ```css
-  /* minecraft font is ready to be used */
-  @import url("https://fontlibrary.org//face/minecraftia");
-  ```
-This will only make the minecraftia font available to use for your webpage. So, to change the default font to the minecraftia one, you must also change the font-family attribute for certain CSS selectors.    
-  4. give the following attributes to the body selector
-        + backgroud image is dirt_background.jpg
-        + font-family is MinecraftiaRegular
-  5. give the following attributes to the h1 selector
-        + color is white
-        + text align is center
-  6. give the following attributes to h2 and h3 selectors
-        + color is white
-        + **Hint:** you can either create 2 separate selectors or merge them into one selector
-  
-  CSS template of 2 selectors in 1:
-  ```css
-  selector1, selector2 {
-    attribute: value;
-  }
-  ```
-  7. give the following attributes to the pre selector
-      + color is white
-      + font family is MinecraftiaRegular
-      + font size is larger
-    
-The reason why we update the font family to the pre tags is because the font from console.log() cannot be changed.  So, we must change the JavaScript text via the pre selector.
-  
-  8. create a class selector called centerElements, and the the following attributes should have:
-      + display is block
-      + text align is center
-      + margin left is auto
-      + margin right is auto
-  9. create an 'a' selector and give the following attributes:
-      + text align is center
-      + color is rgb(0, 255, 0)
-      + background color is gray
-      + font size is 21px
-      + text decoration is none (no underline for links)
+### More stretch goals?
 
-Don't forget to add divs in your HTML files
+Now that you implemented the JS code for the stretch goal, you're free to modify the videos and image link to a different digital media art demo.  They can be demos of either your or someone else's game project.  They can also be video game trailers, 3D modeling tutorials, or your favorite digital art tutorials.
 
-### Make hover animations for links
-
-You learned how to color the text of the link, give it a background color, and change its font size.  You also learned how to position the link.
-```css
-a {
-    color: rgb(0, 255, 0);
-    background-color: gray;
-    font-size: 21px;
-    text-align: center;
-    text-decoration: none;
-}
-```
-Now try making the link's text color white and have it change to orange if the mouse cursor is hovering over it.
-
-### Create an input box instead of arrow "buttons"
-
-The advantage of having arrow "buttons" is having more user interaction.  The disadvantage is it can take a lot of time to go through a large range of numbers(unless if your variable can increment/decrement by a large amount).  A way around this disadvantage is by making the y_position range smaller.  But in Minecraft, going deep underground takes more than a few blocks.  So, an input box lets you type in a number and display the result in seconds.  You could create a ```<form>``` tag but that would redirect to a webpage.  Instead of going through that hassle, you can create an input tag and a button tag.  
-Although it's easy to implement an input box, you'll deal with more test cases.  Like most programming languages, input returns a string value.  Because of this, you must check if the input contains letters or other non-numeric characters.  If it is, then display an error message.  Otherwise, convert the input value into a number.  In order to compare your input value with numbers, it must be converted to a number.          
-
-### Create another webpage of Minecraft coding references
-
-Apply conditional operators (<, >, <=, >=, ==, !=) to ranking minecraft armor.  Apply the &&(and) and the ||(or) logical operators to when the player is able to go to sleep.  Those conditions are when it's night time or there's a thunderstorm and when there's no hostile mobs nearby.  Apply the !(not; negation) logical operator to when the mob is not hostile, the iron golem and snow golem won't attack that mob.  No if/else statements are invovled, however, try to output text to the webpage via a JavaScript file.  You can also apply int, float, and string variables to the rest of the minecraft images provided in the images zip file.  Not to mention, try to include "\n" to your JS files.   
+You can also stylize the webpage with CSS.  For example, change the background color, change the font and its color, decorate the buttons, etc.  Add more digital media artworks to your randomizer.  Apply it to creative coding (p5js for example), Scratch, or game development (Unity or Godot for example).
    
