@@ -11,12 +11,15 @@ Use **JavaScript** to display text and manipulate elements on webpages.  Use the
   2. Provide a title, description, and source for each digital media artwork
   3. Implement code for randomizer
 
+## Difficulty
+
+Intermediate
+
 ## Prerequisites
 
-To complete this project, students should have the following:
-  + Everything you learned before this project
-  + Advanced understanding of JavaScript.
-    + array of objects
+  + Arrays
+  + Functions
+  + Objects
   + Basic understanding of Document Object Model (DOM)
     + document.getElementById()
     + innerHTML
