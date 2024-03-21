@@ -2,11 +2,11 @@
  
 ![CoverImage](assets/ExampleImage.png) 
 
-For this project, you'll be coding a digital media art randomizer.  When you click on the randomize button, a random digital media artwork displays on the web page and its brief information.  For my examples, I chose panda glitch art, panda ASCII art, a 3D model of a bronze bear, a blue forest, a creative coding sketch of an eye, and DreamdowsVR.  You can use whatever images or gifs as long as it's related to digital art. 
+For this project, you'll be coding a digital media art randomizer.  When you click the randomize button, a random digital media artwork displays on the web page and its brief information.  For my examples, I chose panda glitch art, panda ASCII art, a 3D model of a bronze bear, a blue forest, a creative coding sketch of an eye, and DreamdowsVR.  You can use whatever images or gifs as long as it's related to digital art. 
 
 ## Objectives
 
-Use **JavaScript** to display text and manipulate elements on webpages.  Use the DOM to have JavaScript communicate with HTML/CSS to change the image and text with a click of a button.    
+Use **JavaScript** to display text and manipulate elements on webpages.  Use the DOM to have JavaScript communicate with HTML/CSS to change the image and text with a button click.    
   1. Create a gallery of digital media artworks
   2. Provide a title, description, and source for each digital media artwork
   3. Implement code for randomizer
@@ -37,13 +37,13 @@ Make sure to have the following files:
 Create the following files:
   + script.js
   + folder called "assets"
-    + 6 images (or gifs) related to digital art   
+    + At least 3 images (or gifs) related to digital art   
 
-You can use the images I provided, use your own, or use existing ones on the Internet.  No need to change ```index.html``` if you use the provided images.
+You can use the images I provided, use your own, or use existing ones on the Internet.  There's no need to change ```index.html``` if you use the provided images.
 
-If you choose not to use the ones provided, then you can use digital fan art, image edits, 3D models, game sprites, Minecraft builds, or anything relating to digital art.  The possibilities are endless.  Oh and make sure to change the image source in ```index.html```, otherwise, you'll see the panda glitch art upon start (unless you don't mind).
+If you choose not to use the ones provided, you can use digital fan art, image edits, 3D models, game sprites, Minecraft builds, or anything relating to digital art.  The possibilities are endless.  Oh and make sure to change the image source in ```index.html```, otherwise, you'll see the panda glitch art upon start (unless you don't mind).
 
-If you choose to use your own digital media artwork, then briefly state how you made it instead of providing the source link.
+If you choose to use your own digital media artwork, briefly state how you made it instead of providing the source link.
 
 ### Part 2A: Creating Variables in JavaScript File (script.js) 
 
@@ -53,14 +53,14 @@ If you choose to use your own digital media artwork, then briefly state how you 
       + second variable is called ```desc``` and stores an id called ```info```
       + don't forget the quotation marks around the id name 
   3. create an int variable ```randomInt``` that stores ```0```
-  4. create an array called ```artworks``` that stores 6 string values
+  4. create an array called ```artworks``` that stores 3 string values (or however many artworks you choose)
       + each string should start with ```assets/``` and end with ```file name``` and ```file extension```
       + e.g. ```"assets/panda-glitch-art.webp"``` 
      
 ### Part 2B: Creating an Array of Objects
 
   1. create an array of objects called ```artworkDescription```
-  2. store 6 objects in the array
+  2. store at least 3 objects in the array
       + each object should contain ```title```, ```description```, and ```source```
         + title should be the name of the digital artwork
         + provide a brief description of the digital artwork
@@ -75,9 +75,9 @@ If you choose to use your own digital media artwork, then briefly state how you 
   
   ### Part 3A: Template Literals (Multi-line Strings and String Interpolation)
 
-  Before we implement the object properties into innerHTML, let me introduce you to template literals.  Template literals will come in handy because you get to display multiple lines of text in a paragraph element.  Also, it's more convenient than string concatenation as it usually requires less space.
+  Before we implement the object properties into innerHTML, let me introduce you to template literals.  Template literals will be useful because you can display multiple lines of text in a paragraph element.  Also, it's more convenient than string concatenation as it usually requires less space.
 
-  To make a multi-line string, type in the **`** key located between the ```esc``` key and the ```tab``` key.  You can type in whatever you want, but to make it multi-lined, you must press ```enter``` when you want to type more stuff on the next line.
+  To make a multi-line string, type in the **backtick** key between the ```esc``` key and the ```tab``` key.  You can type in whatever you want, but to make it multi-lined, you must press ```enter``` when you want to type more stuff on the next line.
 
   Here's an example of a multi-line string:
   ```js
@@ -92,7 +92,7 @@ If you choose to use your own digital media artwork, then briefly state how you 
   ```
   This is equivalent to using three print statements to print multiple strings but uses fewer lines of code. 
 
-  To perform string interpolation, you would put the variable inside of curly brackets right after the dollar sign.  It must be inside of the backticks, otherwise it won't work.  Here's how to code string interpolation:
+  Put the variable inside curly brackets right after the dollar sign to perform string interpolation.  It must be inside of the backticks, otherwise it won't work.  Here's how to code string interpolation:
   ```js
   var interpolateIO = `1 means ${true} or ON, 0 means ${false} or OFF`;
   var interpolateCattle = `There are ${4} kinds of farm animals in Minecraft.`;
@@ -100,9 +100,9 @@ If you choose to use your own digital media artwork, then briefly state how you 
   let virtues = ["Power", "Courage", "Wisdom"];
 
   var interpolateTri = `The three virtues:
-                         - ${virtues[0]}
-                         - ${virtues[1]}
-                         - ${virtues[2]}`;
+  - ${virtues[0]}
+  - ${virtues[1]}
+  - ${virtues[2]}`;
 
   console.log(interpolateIO);
   // 1 means true or ON, 0 means false or OFF
@@ -148,7 +148,7 @@ You're almost done with this project.  Things look visually complete, but the fu
    3. assign the artworks array with randomInt as the index to the image source of ```artwork``` 
    4. Repeat step 2 from part 3A except change the array of objects' indexes to randomInt
 
-   After step 4, your digital media art randomizer should work.  If it doesn't work, then you try to see if you did all the steps correctly, or you can ask the mentors for help.
+   After step 4, your digital media art randomizer should work.  If it doesn't work, try to see if you did all the steps correctly, or you can ask the mentors for help.
 
    Congratulations!
 
@@ -178,7 +178,7 @@ So you decided to continue working more on this project to add it to your projec
 
 ### More stretch goals?
 
-Now that you implemented the JS code for the stretch goal, you're free to modify the videos and image link to a different digital media art demo.  They can be demos of either your or someone else's game project.  They can also be video game trailers, 3D modeling tutorials, or your favorite digital art tutorials.
+Now that you have implemented the JS code for the stretch goal, you're free to modify the videos and image link to a different digital media art demo.  They can be demos of either your or someone else's game project.  They can also be video game trailers, 3D modeling tutorials, or your favorite digital art tutorials.
 
-You can also stylize the webpage with CSS.  For example, change the background color, change the font and its color, decorate the buttons, etc.  Add more digital media artworks to your randomizer.  Apply it to creative coding (p5js for example), Scratch, or game development (Unity or Godot for example).
+Instead of displaying three digital media artworks, display a total of six.  You can also stylize the webpage with CSS.  For example, change the background color, change the font and its color, decorate the buttons, etc.  Add more digital media artworks to your randomizer.  Apply it to creative coding (e.g. p5js, Processing), Scratch, or game development (e.g. Unity or Godot).
    
