@@ -1,5 +1,3 @@
-//var randomizer = document.getElementById("rand");
-
 // used to get the id elements and apply functionalities to them
 var artwork = document.getElementById("dma");
 var desc = document.getElementById("info");
