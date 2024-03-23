@@ -132,6 +132,8 @@ If you choose to use your own digital media artwork, briefly state how you made 
     
      **Make sure the index you used for your array of objects is the SAME, otherwise, you'll display information from different digital artworks.**
 
+     *Have your mentors check if the results from step 2 are displayed correctly*
+
 ### Part 3B: Create Randomizer Function
 
 You're almost done with this project.  Things look visually complete, but the functionality to randomize digital media artworks is missing.  I already put the function name for the button's onclick event in the HTML file.  So all that's left is to create a function for it.
