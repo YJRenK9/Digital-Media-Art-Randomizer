@@ -47,13 +47,12 @@ If you choose to use your own digital media artwork, briefly state how you made 
 
 ### Part 2A: Creating Variables in JavaScript File (script.js) 
 
-  1. link script.js to index.html at the end of the ```<body>``` tag
-  2. create two variables that store document.getElementById()
+  1. create two variables that store document.getElementById()
       + first variable is called ```artwork``` and stores an id called ```dma```
       + second variable is called ```desc``` and stores an id called ```info```
       + don't forget the quotation marks around the id name 
-  3. create an int variable ```randomInt``` that stores ```0```
-  4. create an array called ```artworks``` that stores 3 string values (or however many artworks you choose)
+  2. create an int variable ```randomInt``` that stores ```0```
+  3. create an array called ```artworks``` that stores 3 string values (or however many artworks you choose)
       + each string should start with ```assets/``` and end with ```file name``` and ```file extension```
       + e.g. ```"assets/panda-glitch-art.webp"``` 
      
