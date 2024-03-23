@@ -126,9 +126,9 @@ If you choose to use your own digital media artwork, briefly state how you made 
   This is the part where we type in HTML tags to improve the layout of the paragraph.  We want to make the information more readable by increasing the line spacing with ```<br>``` and bolding the property names with ```<b>```.  We also want to use string interpolation to get the properties of each object in the array.  
 
   2. type in 3 lines in the template string
-      + The first line should have ```Title:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 5].title}<br><br>```
-      + The second line should have ```Description:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 5].description}<br><br>```
-      + The third line should have ```Source:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 5].source}<br><br>```
+      + The first line should have ```Title:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 2].title}<br><br>```
+      + The second line should have ```Description:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 2].description}<br><br>```
+      + The third line should have ```Source:``` in between the ```<b>``` tag followed by ```${artworkDescription[any number from 0 to 2].source}<br><br>```
     
      **Make sure the index you used for your array of objects is the SAME, otherwise, you'll display information from different digital artworks.**
 
